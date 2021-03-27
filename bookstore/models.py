@@ -9,6 +9,7 @@ from django.utils.translation import gettext_lazy as _
 User = get_user_model()
 
 
+
 class BookInstance(models.Model):
     """Model representing a specific copy of a book (i.e. that can be borrowed from the library)."""
 
@@ -24,7 +25,7 @@ class BookInstance(models.Model):
 
     # comment_status = models.PositiveSmallIntegerField(choices=CommentStatus.choices, default=1)
     status = models.PositiveSmallIntegerField(choices=BookStatus.choices, default=1)
-    customer = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+  #  customer = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     timestamp = models.DateTimeField(default=timezone.now)
 
     class Meta:
@@ -51,7 +52,7 @@ class Book(models.Model):
 
 class Author(models.Model):
     """Model representing an author."""
- #   owner = models.ForeignKey('auth.User', related_name='bookstore', on_delete=models.CASCADE)
+    #   owner = models.ForeignKey('auth.User', related_name='bookstore', on_delete=models.CASCADE)
     first_name = models.CharField(_("first name"), max_length=100)
     last_name = models.CharField(_("last name"), max_length=100)
     date_of_birth = models.DateField(_("date of birth"), null=True, blank=True)

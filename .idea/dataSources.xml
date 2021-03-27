@@ -13,7 +13,7 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="postgres@localhost" uuid="bb28b299-0109-4b88-ba59-580865119ffa">
+    <data-source source="LOCAL" name="dev_db" group="postgresql:/postgres:postgres@db:5432/dev_db" uuid="bb28b299-0109-4b88-ba59-580865119ffa">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
@@ -25,6 +25,13 @@
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>$PROJECT_DIR$/store/settings.py</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://db:5432/postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="postgres@db" group="postgresql:/postgres:postgres@db:5432" uuid="ffe90b03-f102-483f-b00a-131dd487ef75">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://db:5432/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>

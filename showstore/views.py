@@ -7,19 +7,19 @@ from django.shortcuts import render
 from django.views.decorators.cache import cache_page
 
 
-@cache_page(10)
-def listing(request):
-    auth = coreapi.auth.BasicAuthentication(
-        username='admin',
-        password='admin'
-    )
-    client = coreapi.Client(auth=auth)
-    schema = client.get('http://localhost:8000/book/')
-    paginator = Paginator(client, 30)  # Show 30 contacts per page.
-
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-    return render(request, 'sale/city_list.html', {'page_obj': page_obj})
+# @cache_page(10)
+# def listing(request):
+#     auth = coreapi.auth.BasicAuthentication(
+#         username='admin',
+#         password='admin'
+#     )
+#     client = coreapi.Client(auth=auth)
+#     schema = client.get('http://localhost:8000/book/')
+#     paginator = Paginator(client, 30)  # Show 30 contacts per page.
+#
+#     page_number = request.GET.get('page')
+#     page_obj = paginator.get_page(page_number)
+#     return render(request, 'sale/city_list.html', {'page_obj': page_obj})
 
 
 #@cache_page(10)
